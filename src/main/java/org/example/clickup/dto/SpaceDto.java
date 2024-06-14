@@ -3,16 +3,19 @@ package org.example.clickup.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.clickup.model.WorkSpace;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class UserDto {
-    private String fullName;
-    private String email;
-    private String password;
+public class SpaceDto {
+    private String name;
     private String color;
+    private Long workSpaceId;
     private String initialLetter;
+    private Long iconId;
     private Long avatarId;
+    private Long ownerId;
+    private String accessType;
 }
