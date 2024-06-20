@@ -6,7 +6,6 @@ import org.example.clickup.model.User;
 import org.example.clickup.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -40,5 +39,4 @@ public class UserController {
     public Result deleteUser(@PathVariable Long id){
         return userService.deleteUserById(id);
     }
-
 }
