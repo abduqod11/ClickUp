@@ -6,7 +6,6 @@ import org.example.clickup.model.User;
 import org.example.clickup.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -37,7 +36,7 @@ public class UserService {
         user.setInitialLetter(userDto.getInitialLetter());
         user.setAvatarId(userDto.getAvatarId());
         userRepository.save(user);
-        return new Result(true, "User created");
+        return new Result(true, "User Created Successfully");
     }
 
     public Result updateUser(Long id, UserDto userDto) {
@@ -51,13 +50,13 @@ public class UserService {
             user.setInitialLetter(userDto.getInitialLetter());
             user.setAvatarId(userDto.getAvatarId());
             userRepository.save(user);
-            return new Result(true, "User updated");
+            return new Result(true, "User Updated Successfully");
         }
-        return new Result(false, "User not found");
+        return new Result(false, "User Not Found");
     }
 
     public Result deleteUserById(Long id) {
         userRepository.deleteById(id);
-        return new Result(true, "User deleted");
+        return new Result(true, "User Deleted Successfully");
     }
 }

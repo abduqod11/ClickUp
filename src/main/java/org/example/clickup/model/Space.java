@@ -16,7 +16,7 @@ import org.example.clickup.model.temporale.AbsEntity;
 @Entity
 
 public class Space extends AbsEntity {
-    @Column(nullable = false)
+    @Column(nullable = false,unique = true)
     private String name;
     @Column(nullable = false)
     private String color;

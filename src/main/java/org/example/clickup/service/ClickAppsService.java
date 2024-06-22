@@ -8,7 +8,6 @@ import org.example.clickup.repository.ClickAppsRepository;
 import org.example.clickup.repository.IconRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -17,7 +16,6 @@ import java.util.Optional;
 public class ClickAppsService {
     @Autowired
     ClickAppsRepository clickAppsRepository;
-
     @Autowired
     IconRepository iconRepository;
 
@@ -32,7 +30,7 @@ public class ClickAppsService {
         Icon icon = optionalIcon.get();
         clickApps.setIconId(icon);
         clickAppsRepository.save(clickApps);
-        return new Result(true,"Click Apps Created");
+        return new Result(true,"ClickApps Created Successfully");
     }
 
     public Result updateCLickApps(ClickAppsDto clickAppsDto,Long id) {
@@ -44,13 +42,13 @@ public class ClickAppsService {
             Icon icon = optionalIcon.get();
             clickApps.setIconId(icon);
             clickAppsRepository.save(clickApps);
-            return new Result(true,"Click Apps Updated");
+            return new Result(true,"ClickApps Updated Successfully");
         }
-        return new Result(false,"Click Apps Not Found");
+        return new Result(false,"ClickApps Not Found");
     }
 
     public Result deleteCLickApps(Long id) {
         clickAppsRepository.deleteById(id);
-        return new Result(true,"Click Apps Deleted");
+        return new Result(true,"ClickApps Deleted Successfully");
     }
 }

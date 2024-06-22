@@ -48,7 +48,7 @@ public class WorkSpaceService {
         Attachment attachment = optionalAttachment.get();
         workSpace.setAvatarId(attachment);
         workSpaceRepository.save(workSpace);
-        return new Result(true,"WorkSpace Created");
+        return new Result(true,"WorkSpace Created Successfully");
     }
 
     public Result updateWorkSpace(WorkSpaceDto workSpaceDto,Long id) {
@@ -59,13 +59,13 @@ public class WorkSpaceService {
             workSpace.setColor(workSpaceDto.getColor());
             workSpace.setInitialLetter(workSpaceDto.getInitialLetter());
             workSpaceRepository.save(workSpace);
-            return new Result(true,"WorkSpace updated");
+            return new Result(true,"WorkSpace updated Successfully");
         }
-        return new Result(false,"WorkSPace not found");
+        return new Result(false,"WorkSPace Not Found");
     }
 
     public Result deleteWorkSpaceById(Long id ){
         workSpaceRepository.deleteById(id);
-        return new Result(true,"WorkSpace deleted");
+        return new Result(true,"WorkSpace Deleted Successfully");
     }
 }

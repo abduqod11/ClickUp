@@ -26,7 +26,7 @@ public class AttachmentService {
         attachment.setContentType(attachmentDto.getContentType());
         attachment.setOriginalName(attachmentDto.getOriginalName());
         attachmentRepository.save(attachment);
-        return new Result(true,"Attachment created");
+        return new Result(true,"Attachment Created Successfully");
     }
 
     public Result updateAttachment(Long id,AttachmentDto attachmentDto){
@@ -38,13 +38,13 @@ public class AttachmentService {
             attachment.setContentType(attachmentDto.getContentType());
             attachment.setOriginalName(attachmentDto.getOriginalName());
             attachmentRepository.save(attachment);
-            return new Result(true,"Attachment updated");
+            return new Result(true,"Attachment Updated Successfully");
         }
-        return new Result(false,"Attachment not found");
+        return new Result(false,"Attachment Not Found");
     }
 
     public Result deleteAttachmentById(Long id){
         attachmentRepository.deleteById(id);
-        return new Result(true,"Attachment deleted");
+        return new Result(true,"Attachment Deleted Successfully");
     }
 }

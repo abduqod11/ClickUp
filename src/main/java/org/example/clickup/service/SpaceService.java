@@ -10,7 +10,6 @@ import org.example.clickup.repository.SpaceRepository;
 import org.example.clickup.repository.WorkSpaceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -47,7 +46,7 @@ public class SpaceService {
         Icon icon = optionalIcon.get();
         space.setIcon(icon);
         spaceRepository.save(space);
-        return new Result(true,"Space created successfully");
+        return new Result(true,"Space Created Successfully");
     }
 
     public Result updateSpace(SpaceDto spaceDto,Long id){
@@ -67,13 +66,13 @@ public class SpaceService {
             Icon icon = optionalIcon.get();
             space.setIcon(icon);
             spaceRepository.save(space);
-            return new Result(true,"Space updated successfully");
+            return new Result(true,"Space Updated Successfully");
         }
-        return new Result(false,"Space not found");
+        return new Result(false,"Space Not Found");
     }
 
     public Result deleteSpace(Long id){
         spaceRepository.deleteById(id);
-        return new Result(true,"Space deleted successfully");
+        return new Result(true,"Space Deleted Successfully");
     }
 }

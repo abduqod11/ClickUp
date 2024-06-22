@@ -32,7 +32,7 @@ public class IconService {
         Attachment attachment = optionalAttachment.get();
         icon.setAttachmentId(attachment);
         iconRepository.save(icon);
-        return new Result(true,"Icon created successfully");
+        return new Result(true,"Icon Created Successfully");
     }
 
     public Result updateIcon(IconDto iconDto,Long id){
@@ -46,13 +46,13 @@ public class IconService {
             Attachment attachment = optionalAttachment.get();
             icon.setAttachmentId(attachment);
             iconRepository.save(icon);
-            return new Result(true,"Icon updated successfully");
+            return new Result(true,"Icon Updated Successfully");
         }
-        return new Result(false,"Icon not found");
+        return new Result(false,"Icon Not Found");
     }
 
     public Result deleteIcon(Long id){
         iconRepository.deleteById(id);
-        return new Result(true,"Icon deleted successfully");
+        return new Result(true,"Icon Deleted Successfully");
     }
 }
