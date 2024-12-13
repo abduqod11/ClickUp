@@ -25,12 +25,12 @@ public class PriorityController {
         return priorityService.createPriority(priorityDto);
     }
 
-    @PutMapping()
+    @PutMapping("/{id}")
     public Result editPriority(@RequestBody PriorityDto priorityDto,@PathVariable Long id){
         return priorityService.updatePriority(priorityDto,id);
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/{id}")
     public Result deletePriority(@PathVariable Long id){
         return priorityService.deletePriority(id);
     }

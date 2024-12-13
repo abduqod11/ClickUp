@@ -25,12 +25,12 @@ public class WorkSpaceUserController {
         return workSpaceUserService.createWorkSpaceUser(workSpaceUserDto);
     }
 
-    @PutMapping()
+    @PutMapping("/{id}")
     public Result updateWorkSpaceUser(@RequestBody WorkSpaceUserDto workSpaceUserDto,@PathVariable Long id) {
         return workSpaceUserService.updateWorkSpaceUser(workSpaceUserDto,id);
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/{id}")
     public Result deleteWorkSpaceUser(@PathVariable Long id) {
         return workSpaceUserService.deleteWorkSpaceUser(id);
     }

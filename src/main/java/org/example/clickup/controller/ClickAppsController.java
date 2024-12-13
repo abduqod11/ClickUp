@@ -6,7 +6,6 @@ import org.example.clickup.model.Result;
 import org.example.clickup.service.ClickAppsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -26,12 +25,12 @@ public class ClickAppsController {
         return clickAppsService.createCLickApps(clickAppsDto);
     }
 
-    @PutMapping()
+    @PutMapping("/{id}")
     public Result updateClickApp(@RequestBody ClickAppsDto clickAppsDto,@PathVariable Long id){
         return clickAppsService.updateCLickApps(clickAppsDto,id);
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/{id}")
     public Result deleteClickApp(@PathVariable Long id){
         return clickAppsService.deleteCLickApps(id);
     }

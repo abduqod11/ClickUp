@@ -25,12 +25,12 @@ public class WorkSpaceRoleController {
         return workSpaceRoleService.createWorkSpaceRole(workSpaceRoleDto);
     }
 
-    @PutMapping()
+    @PutMapping("/{id}")
     public Result update(@RequestBody WorkSpaceRoleDto workSpaceRoleDto,@PathVariable Long id) {
         return workSpaceRoleService.updateWorkSpaceRole(workSpaceRoleDto,id);
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/{id}")
     public Result delete(@PathVariable Long id) {
         return workSpaceRoleService.deleteWorkSpaceRole(id);
     }

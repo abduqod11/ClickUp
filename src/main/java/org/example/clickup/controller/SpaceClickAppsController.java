@@ -6,7 +6,6 @@ import org.example.clickup.model.SpaceClickApps;
 import org.example.clickup.service.SpaceClickAppsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -26,12 +25,12 @@ public class SpaceClickAppsController {
         return spaceClickAppsService.CreateSpaceClickApps(spaceClickAppsDto);
     }
 
-    @PutMapping()
+    @PutMapping("/{id}")
     public Result updateSpaceCLickApps(@RequestBody SpaceClickAppsDto spaceClickAppsDto,@PathVariable Long id) {
         return spaceClickAppsService.UpdateClickApps(spaceClickAppsDto,id);
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/{id}")
     public Result deleteSpaceClickApps(@PathVariable Long id) {
         return spaceClickAppsService.deleteClickApps(id);
     }

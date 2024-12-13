@@ -25,12 +25,12 @@ public class ViewController {
         return viewService.createView(viewDto);
     }
 
-    @PutMapping()
+    @PutMapping("/{id}")
     public Result updateView(@RequestBody ViewDto viewDto,@PathVariable Long id) {
         return viewService.updateView(viewDto, id);
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/{id}")
     public Result deleteView(@PathVariable Long id) {
         return viewService.deleteView(id);
     }

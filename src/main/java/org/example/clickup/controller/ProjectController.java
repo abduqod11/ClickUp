@@ -26,12 +26,12 @@ public class ProjectController {
         return projectService.createProject(projectDto);
     }
 
-    @PutMapping()
+    @PutMapping("/{id}")
     public Result updateProject(@RequestBody ProjectDto projectDto,@PathVariable Long id) {
         return projectService.updateProject(projectDto, id);
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/{id}")
     public Result deleteProject(@PathVariable Long id) {
         return projectService.deleteProject(id);
     }

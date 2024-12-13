@@ -25,12 +25,12 @@ public class StatusController {
         return statusService.createStatus(statusDto);
     }
 
-    @PutMapping()
+    @PutMapping("/{id}")
     public Result editStatus(@RequestBody StatusDto statusDto,@PathVariable Long id){
         return statusService.updateStatus(statusDto,id);
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/{id}")
     public Result deleteStatus(@PathVariable Long id) {
         return statusService.deleteStatus(id);
     }

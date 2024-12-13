@@ -25,12 +25,12 @@ public class TaskAttachmentController {
         return taskAttachmentService.createTaskAttachment(taskAttachmentDto);
     }
 
-    @PutMapping()
+    @PutMapping("/{id}")
     public Result editTaskAttachment(@RequestBody TaskAttachmentDto taskAttachmentDto,@PathVariable Long id){
         return taskAttachmentService.updateTaskAttachment(taskAttachmentDto,id);
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/{id}")
     public Result deleteTaskAttachment(@PathVariable Long id){
         return taskAttachmentService.deleteTaskAttachment(id);
     }

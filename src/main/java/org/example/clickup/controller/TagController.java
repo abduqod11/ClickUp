@@ -26,12 +26,12 @@ public class TagController {
         return tagService.createTag(tagDto);
     }
 
-    @PutMapping()
+    @PutMapping("/{id}")
     public Result updateTag(@RequestBody TagDto tagDto,@PathVariable Long id){
         return tagService.updateTag(tagDto,id);
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/{id}")
     public Result deleteTag(@PathVariable Long id){
         return tagService.deleteTag(id);
     }

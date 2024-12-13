@@ -25,12 +25,12 @@ public class TimeTrackedController {
         return timeTrackedService.createTimeTracked(timeTrackedDto);
     }
 
-    @PutMapping()
+    @PutMapping("/{id}")
     public Result editTimeTracked(@RequestBody TimeTrackedDto timeTrackedDto,@PathVariable Long id){
         return timeTrackedService.updateTimeTracked(timeTrackedDto,id);
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/{id}")
     public Result deleteTimeTracked(@PathVariable Long id){
         return timeTrackedService.deleteTimeTracked(id);
     }

@@ -25,12 +25,12 @@ public class TaskTagController {
         return taskTagService.createTaskTag(taskTagDto);
     }
 
-    @PutMapping()
+    @PutMapping("/{id}")
     public Result updateTaskTag(@RequestBody TaskTagDto taskTagDto,@PathVariable Long id){
         return taskTagService.updateTaskTag(taskTagDto,id);
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/{id}")
     public Result deleteTaskTag(@PathVariable Long id){
         return taskTagService.deleteTaskTag(id);
     }

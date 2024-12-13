@@ -6,7 +6,6 @@ import org.example.clickup.model.Result;
 import org.example.clickup.service.IconService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -26,7 +25,7 @@ public class IconController {
         return iconService.createIcon(iconDto);
     }
 
-    @PutMapping("/{id")
+    @PutMapping("/{id}")
     public Result editIcon(@RequestBody IconDto iconDto,@PathVariable Long id){
         return iconService.updateIcon(iconDto,id);
     }

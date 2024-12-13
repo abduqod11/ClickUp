@@ -25,12 +25,12 @@ public class CheckListController {
         return checkListService.addCheckList(checkListDto);
     }
 
-    @PutMapping()
+    @PutMapping("/{id}")
     public Result editCheckList(@RequestBody CheckListDto checkListDto,@PathVariable Long id){
         return checkListService.updateCheckList(checkListDto,id);
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/{id}")
     public Result deleteCheckList(@PathVariable Long id){
         return checkListService.deleteCheckList(id);
     }

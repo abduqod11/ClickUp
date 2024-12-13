@@ -6,7 +6,6 @@ import org.example.clickup.model.Result;
 import org.example.clickup.service.ProjectUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -26,12 +25,12 @@ public class ProjectUserController {
         return projectUserService.createProjectUser(projectUserDto);
     }
 
-    @PutMapping()
+    @PutMapping("/{id}")
     public Result editProjectUser(@RequestBody ProjectUserDto projectUserDto,@PathVariable Long id){
         return projectUserService.updateProjectUser(projectUserDto,id);
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/{id}")
     public Result deleteProjectUser(@PathVariable Long id){
         return projectUserService.deleteProjectUser(id);
     }

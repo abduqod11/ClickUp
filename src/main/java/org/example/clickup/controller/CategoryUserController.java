@@ -6,7 +6,6 @@ import org.example.clickup.model.Result;
 import org.example.clickup.service.CategoryUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -26,12 +25,12 @@ public class CategoryUserController {
         return categoryUserService.createCategoryUser(categoryUserDto);
     }
 
-    @PutMapping()
+    @PutMapping("/{id}")
     public Result editCategoryUser(@RequestBody CategoryUserDto categoryUserDto,@PathVariable Long id){
         return categoryUserService.updateCategoryUser(categoryUserDto,id);
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/{id}")
     public Result deleteCategoryUser(@PathVariable Long id){
         return categoryUserService.deleteCategoryUser(id);
     }

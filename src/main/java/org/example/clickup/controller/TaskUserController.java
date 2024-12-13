@@ -25,12 +25,12 @@ public class TaskUserController {
         return taskUserService.createTaskUser(taskUserDto);
     }
 
-    @PutMapping()
+    @PutMapping("/{id}")
     public Result updateTaskUser(@RequestBody TaskUserDto taskUserDto,@PathVariable Long id) {
         return taskUserService.updateTaskUser(taskUserDto,id);
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/{id}")
     public Result deleteTaskUser(@PathVariable Long id) {
         return taskUserService.deleteTaskUser(id);
     }

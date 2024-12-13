@@ -5,10 +5,7 @@ import org.example.clickup.model.Result;
 import org.example.clickup.model.WorkSpacePermission;
 import org.example.clickup.service.WorkSpacePermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
@@ -18,14 +15,17 @@ public class WorkSpacePermissionController {
     @Autowired
     WorkSpacePermissionService workSpacePermissionService;
 
+    @GetMapping()
     public List<WorkSpacePermission> getWorkSpacePermissions() {
         return workSpacePermissionService.getAllPermissions();
     }
 
+    @PostMapping()
     public Result addWorkSpacePermission(@RequestBody WorkSpacePermissionDto workSpacePermissionDto) {
         return workSpacePermissionService.createWorkSpacePermission(workSpacePermissionDto);
     }
 
+    @DeleteMapping("/{id}")
     public Result deleteWorkSpacePermission(@PathVariable Long id) {
         return workSpacePermissionService.deleteWorkSpacePermission(id);
     }

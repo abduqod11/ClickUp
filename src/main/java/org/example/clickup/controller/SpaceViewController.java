@@ -25,12 +25,12 @@ public class SpaceViewController {
         return spaceViewService.createSpaceView(spaceViewDto);
     }
 
-    @PostMapping()
+    @PostMapping("/{id}")
     public Result updateSpaceView(@RequestBody SpaceViewDto spaceViewDto,@PathVariable Long id) {
         return spaceViewService.updateSpaceView(spaceViewDto,id);
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/{id}")
     public Result deleteSpaceView(@PathVariable Long id) {
         return spaceViewService.deleteSpaceView(id);
     }

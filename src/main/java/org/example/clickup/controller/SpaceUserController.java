@@ -24,12 +24,12 @@ public class SpaceUserController {
     public Result createSpaceUser(@RequestBody SpaceUserDto spaceUserDto){
         return spaceUserService.createSpaceUser(spaceUserDto);
     }
-    @PutMapping()
+    @PutMapping("/{id}")
     public Result updateSpaceUser(@RequestBody SpaceUserDto spaceUserDto, @PathVariable Long id){
         return spaceUserService.updateSpaceUser(spaceUserDto,id);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public Result deleteSpaceUser(@PathVariable Long id){
         return spaceUserService.deleteSpaceUser(id);
     }
